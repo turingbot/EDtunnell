@@ -448,6 +448,7 @@ async function ProtocolOverWSHandler(request) {
 			if (hasError) {
 				// controller.error(message);
 				throw new Error(message); // cf seems has bug, controller.error will not end stream
+				return;
 			}
 			// Handle UDP connections for DNS (port 53) only
 			if (isUDP) {
@@ -458,7 +459,7 @@ async function ProtocolOverWSHandler(request) {
 				}
 				return; // Early return after setting isDns or throwing error
 			}
-			// ["version", "附加信息长度 N"]
+			// ["version", "Additional information length N"]
 			const ProtocolResponseHeader = new Uint8Array([ProtocolVersion[0], 0]);
 			const rawClientData = chunk.slice(rawDataIndex);
 
