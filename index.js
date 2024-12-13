@@ -1,5 +1,3 @@
-// EDtunnel - A Cloudflare Worker-based VLESS Proxy with WebSocket Transport
-// @ts-ignore
 import { connect } from 'cloudflare:sockets';
 
 // ======================================
@@ -10,13 +8,13 @@ import { connect } from 'cloudflare:sockets';
  * User configuration and settings
  * Generate UUID: [Windows] Press "Win + R", input cmd and run: Powershell -NoExit -Command "[guid]::NewGuid()"
  */
-let userID = 'd342d11e-d424-4583-b36e-524ab1f0afa4';
+let userID = '5d90cb51-8d71-46b7-b299-4f159017b5ff';
 
 /**
  * Array of proxy server addresses with ports
  * Format: ['hostname:port', 'hostname:port']
  */
-const proxyIPs = ['cdn.xn--b6gac.eu.org:443', 'cdn-all.xn--b6gac.eu.org:443'];
+const proxyIPs = '18.193.131.26';
 
 // Randomly select a proxy server from the pool
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
@@ -1310,29 +1308,29 @@ function GenSub(userID_path, hostname, proxyIP) {
 		'www.shopify.com',
 		'www.whatismyip.com',
 		'www.ipget.net',
-		// 高频率更新
+		// High frequency updates
 		'speed.marisalnc.com',           // 1000ip/3min
 		'freeyx.cloudflare88.eu.org',    // 1000ip/3min
 		'cloudflare.182682.xyz',         // 15ip/15min
-		// '115155.xyz',                    // 18ip/1小时
+		// '115155.xyz',                    // 18ip/1hour
 		// 'cdn.2020111.xyz',               // 15ip/10min
-		'cfip.cfcdn.vip',                // 6ip/1天
+		'cfip.cfcdn.vip',                // 6ip/1day
 		proxyIPs,
-		// 手动更新和未知频率
-		'cf.0sm.com',                    // 手动更新
-		'cloudflare-ip.mofashi.ltd',     // 未知频率
-		'cf.090227.xyz',                 // 未知频率
-		'cname.xirancdn.us',             // 未知频率
-		// 'f3058171cad.002404.xyz',        // 未知频率
-		'cf.zhetengsha.eu.org',          // 未知频率
-		'cloudflare.9jy.cc',             // 未知频率
-		// '8.889288.xyz',                  // 未知频率
-		'cf.zerone-cdn.pp.ua',           // 未知频率
-		'cfip.1323123.xyz',              // 未知频率
-		'cdn.tzpro.xyz',                 // 未知频率
-		'cf.877771.xyz',                 // 未知频率
-		'cnamefuckxxs.yuchen.icu',       // 未知频率
-		'cfip.xxxxxxxx.tk',              // OTC大佬提供维护
+		// Manual updates and unknown frequency
+		'cf.0sm.com',                    // Manual Update
+		'cloudflare-ip.mofashi.ltd',     // Unknown frequency
+		'cf.090227.xyz',                 // Unknown frequency
+		'cname.xirancdn.us',             // Unknown frequency
+		// 'f3058171cad.002404.xyz',        // Unknown frequency
+		'cf.zhetengsha.eu.org',          // Unknown frequency
+		'cloudflare.9jy.cc',             // Unknown frequency
+		// '8.889288.xyz',                  // Unknown frequency
+		'cf.zerone-cdn.pp.ua',           // Unknown frequency
+		'cfip.1323123.xyz',              // Unknown frequency
+		'cdn.tzpro.xyz',                 // Unknown frequency
+		'cf.877771.xyz',                 // Unknown frequency
+		'cnamefuckxxs.yuchen.icu',       // Unknown frequency
+		'cfip.xxxxxxxx.tk',              // OTC bigwigs provide maintenance
 	]);
 
 	const userIDArray = userID_path.includes(',') ? userID_path.split(",") : [userID_path];
