@@ -11,14 +11,9 @@ import { connect } from 'cloudflare:sockets';
 let userID = '5d90cb51-8d71-46b7-b299-4f159017b5ff';
 
 /**
- * Array of proxy server addresses with ports
- * Format: ['hostname:port', 'hostname:port']
+ * Array of proxy server addresses
  */
-const proxyIPs = '18.193.131.26';
-
-// Randomly select a proxy server from the pool
-let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
-let proxyPort = proxyIP.includes(':') ? proxyIP.split(':')[1] : '443';
+let proxyIP = '18.193.131.26';
 
 // Alternative configurations:
 // Single proxy IP: let proxyIP = 'cdn.xn--b6gac.eu.org';
